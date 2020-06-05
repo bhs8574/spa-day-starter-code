@@ -5,6 +5,24 @@
     <title></title>
 </head>
 <body>
+<th:block th:if="${error}">
+    <p>Passwords do not match!  Please enter the same value for Password and Verify Password.</p>
+</th:block>
+<form method="post" action="/user" >
+    <label>Username: <br/>
+        <input type="text" name="username" th:value="${username}">
+    </label>
+    <label><br/>Email:<br/>
+        <input type="email" name="email" th:value="${email}">
+    </label>
+    <label><br/>Password:<br/>
+        <input type="password" name="password" value="password">
+    </label>
+    <label><br/>Verify Password:<br/>
+        <input type="password" name="verify" value="nopenope">
+    </label> <br/>
+    <input type="submit" value="Submit">
+</form>
 
 </body>
 </html>
