@@ -3,8 +3,27 @@
 <head>
     <meta charset="UTF-8"/>
     <title></title>
+    <link href="../static/css/styles.css" th:href="@{/css/styles.css}" rel="stylesheet" />
 </head>
 <body>
 <a th:href="@{/}">Service Selection</a>
+
+<table>
+    <thead>
+    <tr>
+        <th>Users:</th>
+    </tr>
+    </thead>
+    <tr th:each = "user : ${users}">
+        <td>
+            <a th:href="@{/user/details/}+${user.id}">
+                <p th:text="${user.username}"></p>
+            </a>
+        </td>
+    </tr>
+</table>
+
+<p th:unless="${users} and ${users.size()}">No Users!</p>
+
 </body>
 </html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8"/>
+    <link href="../static/css/styles.css" th:href="@{/css/styles.css}" rel="stylesheet" />
+    <title></title>
+</head>
+<body>
+
+<th:block th:if="${invalidUserId}">
+    <p>This User ID is invalid or does not exist.</p>
+    <p th:text="${'ID = ' + id}"></p>
+</th:block>
+
+
+<table th:unless="${invalidUserId}">
+    <thead>
+    <tr>
+        <th>Username:</th>
+        <th>Email:</th>
+        <th>Date:</th>
+    </tr>
+    </thead>
+    <tr>
+        <td th:text="${user.username}">Username</td>
+        <td th:text="${user.email}">Email</td>
+        <td th:text="filler">filler</td>
+    </tr>
+</table>
+
+</body>
+</html>
