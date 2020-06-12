@@ -36,7 +36,6 @@ public class UserController {
 
     @GetMapping("details/{id}")
     public String displayUserInfo(Model model, @PathVariable int id) {
-        //int userId = Integer.parseInt(id);
         if (UserData.getById(id) != null & id > 0) {
             model.addAttribute("user", UserData.getById(id));
         } else {
